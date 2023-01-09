@@ -5,6 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.devtools.v85.target.model.SessionID;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.SessionId;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,6 +15,7 @@ import support.ui.ExpectedConditionEX;
 import urls.Urls;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.function.Function;
 
 public class CheckBoxAndInputStatus implements Urls {
@@ -21,33 +25,35 @@ public class CheckBoxAndInputStatus implements Urls {
 
     public static void main(String[] args) {
         driver.get(indexUrl + dynamicControlSlug);
-
         try {
             WebElement checkBoxExampleEle = driver.findElement(checkBoxExampleSel);
             WebElement checkBoxELe = checkBoxExampleEle.findElement(By.cssSelector("input"));
             WebElement inputExampleEle = driver.findElement(inputExampleSel);
             WebElement textInputELe = inputExampleEle.findElement(By.cssSelector("input"));
+
             WebElement inputStatusBtn = inputExampleEle.findElement(By.cssSelector("button"));
 //            Tick checkbox if not selected
             if (!checkBoxELe.isSelected()) checkBoxELe.click();
 //            Enable text input
             if (!textInputELe.isEnabled()) {
                 inputStatusBtn.click();
-                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));//
 //
 //              Solution 1:
 /**             wait.until(ExpectedConditions.attributeToBe(
 *                      textInputELe, "disabled", "")); // value = "false" or "null" can't match
 *
-*               System.out.println(textInputELe.getAttribute("disabled")); //log: null
+*               System.out.println(textInputELe.getAttribute("disabled")); //log: null https://prnt.sc/eh43gThXSIMy
+ *               "true" https://prnt.sc/tiajDqsRLula
 **/
 //              Solution 2:
-                wait.until(ExpectedConditionEX.elementIsEnabled(textInputELe));
+//                wait.until(ExpectedConditionEX.elementIsEnabled(textInputELe));
+                System.out.println(textInputELe.getAttribute("disabled"));
                 textInputELe.sendKeys("Trash life");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        driver.quit();
+//        driver.quit();
     }
 }
