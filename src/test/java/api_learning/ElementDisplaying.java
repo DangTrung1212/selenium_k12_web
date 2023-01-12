@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class ElementDisplaying {
-    private static final WebDriver driver = DriverFactory.initDriver();
+    private static final WebDriver driver = DriverFactory.initChromeDriver();
 
     public static void main(String[] args) {
         driver.get("https://the-internet.herokuapp.com/login");

@@ -12,7 +12,7 @@ public class DriverFactory {
     private static final String macDriverRelativePath = "/src/test/resources/chromedriver.exe";
     private static final String rootPath = System.getProperty("user.dir");
 
-    public static WebDriver initDriver() {
+    public static WebDriver initChromeDriver() {
         String chromeDriverPath = "";
         if (OS.isFamilyMac()) {
             chromeDriverPath = rootPath + macDriverRelativePath;

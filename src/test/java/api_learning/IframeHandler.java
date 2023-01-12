@@ -8,7 +8,7 @@ import urls.Urls;
 
 public class IframeHandler implements Urls {
     public static void main(String[] args) {
-        WebDriver driver = DriverFactory.initDriver();
+        WebDriver driver = DriverFactory.initChromeDriver();
         try {
             driver.get(indexUrl+iframeSlug);
             WebElement iframeElement = driver.findElement(By.cssSelector("[id$='ifr']"));

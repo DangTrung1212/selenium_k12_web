@@ -4,11 +4,10 @@ import driver.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import urls.Urls;
 
 public class JavascriptExecutor implements Urls {
-    private final static WebDriver driver = DriverFactory.initDriver();
+    private final static WebDriver driver = DriverFactory.initChromeDriver();
     public static void main(String[] args) throws InterruptedException {
         driver.get(indexUrl + dynamicControlSlug);
         try {

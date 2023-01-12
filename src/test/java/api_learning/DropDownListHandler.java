@@ -9,7 +9,7 @@ import urls.Urls;
 
 public class DropDownListHandler implements Urls {
     public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = DriverFactory.initDriver();
+        WebDriver driver = DriverFactory.initChromeDriver();
         try {
             driver.get(indexUrl + dropdownSlug);
             WebElement dropDownElement = driver.findElement(By.cssSelector("#dropdown"));

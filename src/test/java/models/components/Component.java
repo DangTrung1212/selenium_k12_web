@@ -17,26 +17,26 @@ public class Component {
     protected WebDriverWait wait;
     protected WebElement component;
 
-    public Component(WebDriver driver, WebElement component) {
+    protected Component(WebDriver driver, WebElement component) {
         this.driver = driver;
         this.component = component;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
-    public WebElement findElement(By by) {
+    protected WebElement findElement(By by) {
         return component.findElement(by);
     }
 
-    public List<WebElement> findElements(By by) {
+    protected List<WebElement> findElements(By by) {
         return component.findElements(by);
     }
 
-    public <T extends Component> T findComponent(WebDriver driver, Class<T> componentClass) {
+    protected  <T extends Component> T findComponent(WebDriver driver, Class<T> componentClass) {
         return findComponents(driver, componentClass).get(0);
     }
 
     //    search component without knowing detail context => generic type
-    public <T extends Component> List<T> findComponents(WebDriver driver, Class<T> componentClass) {
+    protected  <T extends Component> List<T> findComponents(WebDriver driver, Class<T> componentClass) {
         String cssSelector;
         try {
             cssSelector = componentClass.getAnnotation(ComponentCssSelector.class).value();

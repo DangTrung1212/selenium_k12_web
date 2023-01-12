@@ -9,7 +9,7 @@ import urls.Urls;
 import java.time.Duration;
 
 public class ExplicitWait implements Urls {
-    private static final WebDriver driver = DriverFactory.initDriver();
+    private static final WebDriver driver = DriverFactory.initChromeDriver();
     public static void main(String[] args) {
         try {
             driver.get(indexUrl);

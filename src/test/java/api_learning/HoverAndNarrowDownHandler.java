@@ -1,10 +1,8 @@
 package api_learning;
 
 import driver.DriverFactory;
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import urls.Urls;
@@ -12,7 +10,7 @@ import urls.Urls;
 import java.util.List;
 
 public class HoverAndNarrowDownHandler implements Urls {
-    private static final WebDriver driver = DriverFactory.initDriver();
+    private static final WebDriver driver = DriverFactory.initChromeDriver();
     private static final By figureSel = By.cssSelector(".figure");
     private static final By figCaptionNameSel = By.cssSelector(".figcaption h5");
     private static final By figCaptionLinkSel = By.cssSelector(".figcaption a");

@@ -5,7 +5,6 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import urls.Urls;
@@ -13,7 +12,7 @@ import urls.Urls;
 import java.time.Duration;
 
 public class AlertHandler implements Urls {
-    private static final WebDriver driver = DriverFactory.initDriver();
+    private static final WebDriver driver = DriverFactory.initChromeDriver();
     private static final By jsAlertSel = By.cssSelector("button[onclick=\"jsAlert()\"]");
     private static final By jsAlertConfirmSel = By.cssSelector("button[onclick=\"jsConfirm()\"]");
     private static final By jsAlertPromptSel = By.cssSelector("button[onclick=\"jsPrompt()\"]");

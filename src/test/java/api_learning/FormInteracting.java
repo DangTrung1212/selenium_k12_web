@@ -4,7 +4,7 @@ import driver.DriverFactory;
 import org.openqa.selenium.*;
 
 public class FormInteracting {
-    private static final WebDriver driver = DriverFactory.initDriver();
+    private static final WebDriver driver = DriverFactory.initChromeDriver();
 
     public static void main(String[] args) {
         driver.get("https://the-internet.herokuapp.com/login");

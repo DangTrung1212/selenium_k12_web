@@ -2,24 +2,15 @@ package api_learning;
 
 import driver.DriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v85.target.model.SessionID;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.SessionId;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import support.ui.ExpectedConditionEX;
 import urls.Urls;
 
 import java.time.Duration;
-import java.util.List;
-import java.util.function.Function;
 
 public class CheckBoxAndInputStatus implements Urls {
-    private static final WebDriver driver = DriverFactory.initDriver();
+    private static final WebDriver driver = DriverFactory.initChromeDriver();
     private static final By checkBoxExampleSel = By.cssSelector("#checkbox-example");
     private static final By inputExampleSel = By.cssSelector("#input-example");
 
