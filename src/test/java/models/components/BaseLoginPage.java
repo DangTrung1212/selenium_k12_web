@@ -15,4 +15,7 @@ public abstract class BaseLoginPage {
     public abstract WebElement passWord();
 
     public abstract WebElement submitBtn();
+    public abstract void navigateToPage();
+    public abstract void login(String userNameString, String passWordString);
+
 }

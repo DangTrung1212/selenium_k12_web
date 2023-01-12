@@ -3,12 +3,12 @@ package models.components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
+@ComponentCssSelector("#login")
 public class LoginComponent {
     private final WebDriver driver;
-    private By userNameSel;
-    private By passWordSel;
-    private By submitBtn;
+    private final By userNameSel = By.cssSelector("#username");
+    private final By passWordSel =By.cssSelector("#password");
+    private final By submitBtn = By.cssSelector("button[type='submit']");
 
     public LoginComponent(WebDriver driver) {
         this.driver = driver;
