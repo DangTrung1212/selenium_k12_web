@@ -5,34 +5,35 @@ import models.components.global.footer.FooterColumnComponent;
 import models.components.global.footer.FooterComponent;
 import models.pages.HomePage;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+import org.testng.asserts.Assertion;
+import org.testng.asserts.SoftAssert;
+import test_flows.global.FooterTestFlow;
 import urls.Urls;
 
 public class TestFooter {
-    public static WebDriver driver = DriverFactory.initChromeDriver();
 
-    public static void main(String[] args) {
-        try {
-            driver.get(Urls.demoBaseUrl);
-            new TestFooter().testFooter();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        driver.quit();
-
-    }
+    @Test
     public void testFooter() {
-        HomePage homePage = new HomePage(driver);
-        FooterComponent footerComp = homePage.footerComp();
-        testFooterColumn(footerComp.informationColumnComp());
-        testFooterColumn(footerComp.myAccountColumnComponent());
-        testFooterColumn(footerComp.followUsColumnComp());
-        testFooterColumn(footerComp.customServiceColumnComp());
+        WebDriver driver = DriverFactory.initChromeDriver();
+        FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
+        footerTestFlow.verifyFooterComponent();
     }
-    public void testFooterColumn(FooterColumnComponent footerColumnComponent) {
-        System.out.println(footerColumnComponent.headerEle().getText());
-        footerColumnComponent.linksEle().forEach(link -> {
-            System.out.println(link.getText());
-            System.out.println(link.getAttribute("href"));
-        });
+
+    @Test
+    public void testHardAssertion() {
+        Assertion assertion = new Assertion();
+//        assertion.assertEquals(2,3);
+        assertion.assertFalse(false);
+        assertion.assertTrue(true);
     }
+    @Test
+    public void testSortAssertion() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(2,3);
+        softAssert.assertTrue(false);
+        System.out.println("heelo");
+        softAssert.assertAll();
+    }
+
 }
