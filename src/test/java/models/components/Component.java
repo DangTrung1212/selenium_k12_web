@@ -17,7 +17,7 @@ public class Component {
     protected WebDriverWait wait;
     protected WebElement component;
 
-    protected Component(WebDriver driver, WebElement component) {
+    public Component(WebDriver driver, WebElement component) {
         this.driver = driver;
         this.component = component;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
