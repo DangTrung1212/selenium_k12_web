@@ -16,10 +16,10 @@ public class ProductItemComponent extends Component {
     }
 
     public WebElement titleEle() {
-        return component.findElement(titleSel);
+        return element.findElement(titleSel);
     }
 
     public WebElement priceEle() {
-        return component.findElement(priceSel);
+        return element.findElement(priceSel);
     }
 }

@@ -14,9 +14,9 @@ public class FooterColumnComponent extends Component {
         super(driver, component);
     }
     public WebElement headerEle() {
-        return component.findElement(headerSel);
+        return element.findElement(headerSel);
     }
     public List<WebElement> linksEle() {
-        return component.findElements(linkSel);
+        return element.findElements(linkSel);
     }
 }

@@ -27,12 +27,12 @@ public class TopMenuComponent extends Component {
         }
 
         public WebElement catItemLinkEle() {
-            return component.findElement(By.tagName("a"));
+            return element.findElement(By.tagName("a"));
         }
 
         public List<SublistComponent> sublistComps() {
             Actions actions = new Actions(driver);
-            actions.moveToElement(component).perform();
+            actions.moveToElement(element).perform();
             return findComponents(driver, SublistComponent.class);
         }
 

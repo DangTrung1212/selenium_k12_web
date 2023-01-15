@@ -15,20 +15,24 @@ import java.util.stream.Collectors;
 public class Component {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected WebElement component;
+    protected WebElement element;
 
-    public Component(WebDriver driver, WebElement component) {
+    public Component(WebDriver driver, WebElement element) {
         this.driver = driver;
-        this.component = component;
+        this.element = element;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
+    public WebElement getSelfElement() {
+        return element;
+    }
+
     protected WebElement findElement(By by) {
-        return component.findElement(by);
+        return element.findElement(by);
     }
 
     protected List<WebElement> findElements(By by) {
-        return component.findElements(by);
+        return element.findElements(by);
     }
 
     protected <T extends Component> T findComponent(WebDriver driver, Class<T> componentClass) {
@@ -39,7 +43,7 @@ public class Component {
     protected <T extends Component> List<T> findComponents(WebDriver driver, Class<T> componentClass) {
         By cssSelector = getSelector(componentClass);
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(cssSelector));
-        List<WebElement> results = component.findElements(cssSelector);
+        List<WebElement> results = element.findElements(cssSelector);
         Class<?>[] parameters = new Class[]{WebDriver.class, WebElement.class};
         Constructor<T> constructor;
         try {

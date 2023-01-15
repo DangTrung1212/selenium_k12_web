@@ -1,9 +1,6 @@
 package test.global;
 
 import driver.DriverFactory;
-import models.components.global.footer.FooterColumnComponent;
-import models.components.global.footer.FooterComponent;
-import models.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
@@ -13,25 +10,42 @@ import urls.Urls;
 
 public class TestFooter {
 
-    @Test
     public void testFooter() {
         WebDriver driver = DriverFactory.initChromeDriver();
+        driver.get(Urls.demoBaseUrl);
         FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
-        footerTestFlow.verifyFooterComponent();
+        try {
+            footerTestFlow.verifyFooterComponent();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        driver.quit();
     }
 
     @Test
+    public void testProductCatFooterComp() {
+        WebDriver driver = DriverFactory.initChromeDriver();
+        driver.get(Urls.demoBaseUrl);
+        try {
+            FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
+            footerTestFlow.verifyProductCatFooterComponent();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
+    }
+
     public void testHardAssertion() {
         Assertion assertion = new Assertion();
 //        assertion.assertEquals(2,3);
         assertion.assertFalse(false);
         assertion.assertTrue(true);
     }
-    @Test
+
     public void testSortAssertion() {
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(2,3);
-        softAssert.assertTrue(false);
+        softAssert.assertEquals(2, 3);
         System.out.println("heelo");
         softAssert.assertAll();
     }

@@ -24,9 +24,9 @@ public class DriverFactory {
         }
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--incognito", "--maximized");
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().window().maximize();
         return driver;
     }
 }

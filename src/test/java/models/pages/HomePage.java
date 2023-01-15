@@ -7,7 +7,4 @@ public class HomePage extends BasePage{
     public HomePage(WebDriver driver) {
         super(driver);
     }
-    public ProductGridComponent productGridComponent() {
-        return findComponent(driver, ProductGridComponent.class);
-    }
 }
