@@ -1,39 +1,32 @@
 package test.global;
 
 import driver.DriverFactory;
+import models.pages.BasePage;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 import org.testng.asserts.SoftAssert;
 import test_flows.global.FooterTestFlow;
 import urls.Urls;
 
-public class TestFooter {
-
+public class TestFooter extends BaseTest {
+    @Test
     public void testFooter() {
-        WebDriver driver = DriverFactory.initChromeDriver();
         driver.get(Urls.demoBaseUrl);
         FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
-        try {
-            footerTestFlow.verifyFooterComponent();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        driver.quit();
+        footerTestFlow.verifyFooterComponent();
+        Assert.fail("Fail for screen shot");
+
+
     }
 
     @Test
     public void testProductCatFooterComp() {
-        WebDriver driver = DriverFactory.initChromeDriver();
         driver.get(Urls.demoBaseUrl);
-        try {
-            FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
-            footerTestFlow.verifyProductCatFooterComponent();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            driver.quit();
-        }
+        FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
+        footerTestFlow.verifyProductCatFooterComponent();
+
     }
 
     public void testHardAssertion() {
