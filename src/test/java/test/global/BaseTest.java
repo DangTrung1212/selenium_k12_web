@@ -41,7 +41,7 @@ public class BaseTest {
             String methodName = result.getName();
 //            Get created time
             Calendar calendar = new GregorianCalendar();
-            String fileName = String.format("%s-%d-%d-%d-%d-%d-%d-%d.png",
+            String fileName = String.format("%s-y%d-m%d-d%d_%d:%d:%d:%d.png",
                     methodName,
                     calendar.get(Calendar.YEAR),
                     calendar.get(Calendar.MONTH) + 1,

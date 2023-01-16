@@ -16,9 +16,7 @@ public class BasePage extends Component {
     public TopMenuComponent topMenuComp() {
         return findComponent(driver, TopMenuComponent.class);
     }
-    public ProductGridComponent productGridComponent() {
-        return findComponent(driver, ProductGridComponent.class);
-    }
+
     public FooterComponent footerComp() {
         return findComponent(driver, FooterComponent.class);
     }
