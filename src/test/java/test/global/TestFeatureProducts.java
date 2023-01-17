@@ -19,7 +19,7 @@ public class TestFeatureProducts {
         driver.quit();
     }
     public static void testFeatureProducts(WebDriver driver) {
-        driver.get(Urls.demoBaseUrl);
+        driver.get(Urls.demoEcommerceBaseUrl);
         HomePage homePage = new HomePage(driver);
         List<ProductItemComponent> productItemComponents =homePage.productGridComponent().productItemComps();
         productItemComponents.forEach(productItem -> {

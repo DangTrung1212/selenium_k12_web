@@ -1,8 +1,5 @@
 package test.global;
 
-import driver.DriverFactory;
-import models.pages.BasePage;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
@@ -13,17 +10,15 @@ import urls.Urls;
 public class TestFooter extends BaseTest {
     @Test
     public void testFooter() {
-        driver.get(Urls.demoBaseUrl);
+        driver.get(Urls.demoEcommerceBaseUrl);
         FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
         footerTestFlow.verifyFooterComponent();
-        Assert.fail("Fail for screen shot");
-
-
     }
 
     @Test
     public void testProductCatFooterComp() {
-        driver.get(Urls.demoBaseUrl);
+        driver.get(Urls.demoEcommerceBaseUrl);
+        Assert.fail("fail for screenshot");
         FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
         footerTestFlow.verifyProductCatFooterComponent();
 

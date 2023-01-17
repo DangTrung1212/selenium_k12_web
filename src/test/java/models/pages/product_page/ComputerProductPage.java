@@ -7,7 +7,7 @@ public class ComputerProductPage<T extends ComputerProductEssentialComponent> ex
     public ComputerProductPage(WebDriver driver) {
         super(driver);
     }
-    public T computerProductCenterComp(Class<T> computerProductCenterCompClass) {
+    public T computerProductEssentialComp(Class<T> computerProductCenterCompClass) {
         return findComponent(driver, computerProductCenterCompClass);
     }
 

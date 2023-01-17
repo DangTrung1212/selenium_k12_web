@@ -1,6 +1,5 @@
 package test_flows.global;
 
-import models.components.Component;
 import models.components.global.TopMenuComponent;
 import models.components.global.TopMenuComponent.TopMenuItemComponent.SublistComponent;
 import models.components.global.footer.*;
@@ -25,7 +24,7 @@ import java.util.List;
 
 public class FooterTestFlow {
     private final WebDriver driver;
-    public String baseUrl = Urls.demoBaseUrl;
+    public String baseUrl = Urls.demoEcommerceBaseUrl;
 
     public FooterTestFlow(WebDriver driver) {
         this.driver = driver;

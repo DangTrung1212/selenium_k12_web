@@ -12,9 +12,9 @@ public class OrderComputerTestFlow {
     public void orderCheapComputerFlow() {
         ComputerProductPage<CheapComputerEssentialComponent> computerProductPage = new ComputerProductPage<>(driver);
         CheapComputerEssentialComponent cheapComputerCenterComp =
-                computerProductPage.computerProductCenterComp(CheapComputerEssentialComponent.class);
-        cheapComputerCenterComp.selectProcessor();
-        cheapComputerCenterComp.selectRam();
+                computerProductPage.computerProductEssentialComp(CheapComputerEssentialComponent.class);
+        cheapComputerCenterComp.selectProcessor("Slow");
+        cheapComputerCenterComp.selectRam("4 GB");
     }
 
 }

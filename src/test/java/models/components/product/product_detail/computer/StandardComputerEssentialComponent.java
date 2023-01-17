@@ -9,11 +9,19 @@ public class StandardComputerEssentialComponent extends ComputerProductEssential
     }
 
     @Override
-    public void selectProcessor() {
+    public String selectProcessor(String processorType) {
+        return null;
     }
 
     @Override
-    public void selectRam() {
-
+    public String selectRam(String ramType) {
+        return null;
     }
+
+    @Override
+    public String selectHDD(String hDDType) {
+        return null;
+    }
+
+
 }
