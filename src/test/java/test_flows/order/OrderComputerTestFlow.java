@@ -1,6 +1,6 @@
 package test_flows.order;
 
-import models.components.product.product_detail.computer.CheapComputerCenterComponent;
+import models.components.product.product_detail.computer.CheapComputerEssentialComponent;
 import models.pages.product_page.ComputerProductPage;
 import org.openqa.selenium.WebDriver;
 
@@ -9,10 +9,10 @@ public class OrderComputerTestFlow {
     public OrderComputerTestFlow(WebDriver driver) {
         this.driver = driver;
     }
-    public void orderCheapPCFlow() {
-        ComputerProductPage<CheapComputerCenterComponent> computerProductPage = new ComputerProductPage<>(driver);
-        CheapComputerCenterComponent cheapComputerCenterComp =
-                computerProductPage.computerProductCenterComp(CheapComputerCenterComponent.class);
+    public void orderCheapComputerFlow() {
+        ComputerProductPage<CheapComputerEssentialComponent> computerProductPage = new ComputerProductPage<>(driver);
+        CheapComputerEssentialComponent cheapComputerCenterComp =
+                computerProductPage.computerProductCenterComp(CheapComputerEssentialComponent.class);
         cheapComputerCenterComp.selectProcessor();
         cheapComputerCenterComp.selectRam();
     }
