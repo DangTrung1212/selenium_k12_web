@@ -33,10 +33,26 @@ public class SelectHelper {
         }
         return textValue;
     }
-    public static void selectDropDownOption(WebElement dropDownContainer, String text) {
-        By optionSel = By.xpath(String.format("//select/option[contains(text(),'%s')]", text));
-        WebElement option = dropDownContainer.findElement(optionSel);
-        Select select = new Select(option.findElement(By.xpath("..")));
+
+    public static String selectDropDownOption(WebElement dropDownContainer, String uniqueText) {
+        By optionSel = By.xpath(String.format("//select/option[contains(text(),'%s')]", uniqueText));
+        WebElement optionEle;
+        String optionText;
+        try {
+            optionEle = dropDownContainer.findElement(optionSel);
+            optionText = optionEle.getText();
+        } catch (Exception e) {
+            throw new RuntimeException("No such option contains " + uniqueText);
+        }
+        Select select = new Select(optionEle.findElement(By.xpath("..")));
+        List<WebElement> options = select.getOptions();
+        for (WebElement option : options) {
+            if (option.getText().contains(uniqueText)) {
+                select.selectByVisibleText(option.getText());
+                break;
+            }
+        }
+        return optionText;
 
 
     }
