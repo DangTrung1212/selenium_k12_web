@@ -24,4 +24,14 @@ public class CheapComputerEssentialComponent extends ComputerProductEssentialCom
     public String selectHDD(String hDDType) {
         return SelectHelper.selectRadioBtn(getSelfElement(), hDDType, true);
     }
+
+    @Override
+    public String selectOS(String os) {
+        return null;
+    }
+
+    @Override
+    public String selectSoftware(String software) {
+        return SelectHelper.selectRadioBtn(getSelfElement(), software, true);
+    }
 }

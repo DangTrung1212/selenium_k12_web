@@ -21,7 +21,17 @@ public class StandardComputerEssentialComponent extends ComputerProductEssential
 
     @Override
     public String selectHDD(String hDDType) {
-        return null;
+        return SelectHelper.selectRadioBtn(getSelfElement(), hDDType, true);
+    }
+
+    @Override
+    public String selectOS(String os) {
+        return SelectHelper.selectRadioBtn(getSelfElement(), os, true);
+    }
+
+    @Override
+    public String selectSoftware(String software) {
+        return SelectHelper.selectRadioBtn(getSelfElement(), software, true);
     }
 
 

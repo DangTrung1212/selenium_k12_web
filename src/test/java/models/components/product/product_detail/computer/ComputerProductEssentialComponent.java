@@ -12,4 +12,6 @@ public abstract class ComputerProductEssentialComponent extends ProductEssential
     abstract public String selectProcessor(String processorType);
     abstract public String selectRam(String ramType);
     abstract public String selectHDD(String hDDType);
+    abstract public String selectOS(String os);
+    abstract public String selectSoftware(String software);
 }

@@ -1,9 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Regression Test">
+<suite name="Order Test">
     <test name="Order PC Test" >
         <classes>
-            <class name="test.order.TestOrderComputer" />
+            <class name="test.order.TestOrderCheapComputer" />
+            <class name="test.order.TestOrderStandardComputer" />
         </classes>
     </test>
 </suite>

@@ -15,7 +15,9 @@ public class SelectHelper {
                     "')]/preceding-sibling::input", text));
             List<WebElement> option = radioBtnContainer.findElements(optionSel);
             if (!option.isEmpty()) {
-                option.get(0).click();
+                if (!option.get(0).isSelected()) {
+                    option.get(0).click();
+                }
                 textValue = option.get(0).findElement(By.xpath("following-sibling::label")).getText();
             } else {
                 throw new RuntimeException("No option contained " + text);
@@ -25,7 +27,9 @@ public class SelectHelper {
                     "')]/following-sibling::input", text));
             List<WebElement> option = radioBtnContainer.findElements(optionSel);
             if (!option.isEmpty()) {
-                option.get(0).click();
+                if (!option.get(0).isSelected()) {
+                    option.get(0).click();
+                }
                 textValue = option.get(0).findElement(By.xpath("preceding-sibling::label")).getText();
             } else {
                 throw new RuntimeException("No option contained " + text);
