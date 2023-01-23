@@ -18,11 +18,6 @@ public class TestOrderCheapComputer extends BaseTest {
                 new OrderComputerTestFlow<>(driver,computerData);
         orderComputerTestFlow.orderComputerFlow(
                 CheapComputerEssentialComponent.class);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
     @DataProvider
     private ComputerData[] computerData() {
