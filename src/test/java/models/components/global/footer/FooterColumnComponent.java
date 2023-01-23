@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
-@ComponentCssSelector(value = "abc") //for demo inherited
 public class FooterColumnComponent extends Component {
     private final By headerSel = By.tagName("h3");
     private final By linkSel = By.cssSelector("li a");

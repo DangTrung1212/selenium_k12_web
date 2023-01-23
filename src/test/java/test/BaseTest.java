@@ -1,19 +1,18 @@
-package test.global;
+package test;
 
 import driver.DriverFactory;
 import io.qameta.allure.Allure;
+import org.apache.commons.exec.OS;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.IResultMap;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -51,7 +50,11 @@ public class BaseTest {
                     calendar.get(Calendar.SECOND),
                     calendar.get(Calendar.MILLISECOND));
             File screenshotBase64Data = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            String fileLocation = System.getProperty("user.dir") + "\\screenshot\\" + fileName;
+            String fileLocation="";
+            if (OS.isFamilyMac()) fileLocation = System.getProperty("user.dir") + "/screenshot/" + fileName;
+            else if (OS.isFamilyWindows())
+                fileLocation = System.getProperty("user.dir") + "\\screenshot\\" + fileName;
+
             try {
                 FileUtils.copyFile(screenshotBase64Data, new File(fileLocation));
                 Path content = Paths.get(fileLocation);

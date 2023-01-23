@@ -1,10 +1,9 @@
 package test.order;
 
-import models.components.product.product_detail.computer.CheapComputerEssentialComponent;
 import models.components.product.product_detail.computer.StandardComputerEssentialComponent;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import test.global.BaseTest;
+import test.BaseTest;
 import test_data.DataObjectBuilder;
 import test_data.computer.ComputerData;
 import test_flows.order.OrderComputerTestFlow;

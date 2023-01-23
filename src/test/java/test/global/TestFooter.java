@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 import org.testng.asserts.SoftAssert;
+import test.BaseTest;
 import test_flows.global.FooterTestFlow;
 import urls.Urls;
 

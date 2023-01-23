@@ -10,13 +10,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class BasePage extends Component {
+    private final By pageTitleSel = By.cssSelector(".page-title");
     public BasePage(WebDriver driver) {
         super(driver, driver.findElement(By.tagName("html")));
     }
     public HeaderComponent headerComp() {
         return findComponent(driver, HeaderComponent.class);
     }
-
+    public String pageTitle() {
+        return findElement(pageTitleSel).getText();
+    }
     public TopMenuComponent topMenuComp() {
         return findComponent(driver, TopMenuComponent.class);
     }
