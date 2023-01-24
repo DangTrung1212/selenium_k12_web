@@ -15,8 +15,18 @@ public class TestOrderCheapComputer extends BaseTest {
         driver.get(Urls.demoEcommerceBaseUrl + Urls.cheapComputerSlug);
         OrderComputerTestFlow<CheapComputerEssentialComponent> orderComputerTestFlow =
                 new OrderComputerTestFlow<>(driver,computerData);
-        orderComputerTestFlow.orderComputerFlow(
+        orderComputerTestFlow.buildComputerAndAddToCart(
                 CheapComputerEssentialComponent.class);
+        orderComputerTestFlow.verifyCartPage();
+        orderComputerTestFlow.clickTOSCheckboxAndCheckOut();
+        orderComputerTestFlow.clickOnCheckoutAsGuestBtn();
+        orderComputerTestFlow.inputBillingAddress();
+
+//        orderComputerTestFlow.inputShippingAddress();
+//        orderComputerTestFlow.inputShippingMethod();
+//        orderComputerTestFlow.inputPaymentMethod();
+//        orderComputerTestFlow.inputPaymentInfo();
+//        orderComputerTestFlow.confirmOrder();
     }
     @DataProvider
     private ComputerData[] computerData() {

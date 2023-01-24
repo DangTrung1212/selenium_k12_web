@@ -19,7 +19,6 @@ public class TestFooter extends BaseTest {
     @Test
     public void testProductCatFooterComp() {
         driver.get(Urls.demoEcommerceBaseUrl);
-        Assert.fail("fail for screenshot");
         FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
         footerTestFlow.verifyProductCatFooterComponent();
 

@@ -1,13 +1,20 @@
 package test_flows.order;
 
-import models.components.cart.CartFooterComponent;
 import models.components.cart.CartFooterTotalComponent;
+import models.components.cart.CartItemComponent;
+import models.components.checkout.checkout_data.BillAddressComponent;
 import models.components.product.product_detail.computer.ComputerProductEssentialComponent;
 import models.pages.CartPage;
+import models.pages.checkout_page.CheckoutOptionPage;
+import models.pages.checkout_page.CheckoutPage;
 import models.pages.product_page.ComputerProductPage;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import test_data.DataObjectBuilder;
 import test_data.computer.ComputerData;
+import test_data.user.UserBillAddressData;
 
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,6 +25,10 @@ public class OrderComputerTestFlow<T extends ComputerProductEssentialComponent> 
 
     private double totalPrice;
     private final int qty;
+    private final UserBillAddressData defaultBillAddressData = DataObjectBuilder
+            .buildDataObjectFrom(
+                    "/src/test/java/test_data/user/DefaultBillingAddressData.json",
+                    UserBillAddressData.class);
 
     public OrderComputerTestFlow(WebDriver driver, ComputerData computerData) {
         this.driver = driver;
@@ -32,7 +43,7 @@ public class OrderComputerTestFlow<T extends ComputerProductEssentialComponent> 
         this.qty = qty;
     }
 
-    public void orderComputerFlow(Class<T> computerEssentialClass) {
+    public void buildComputerAndAddToCart(Class<T> computerEssentialClass) {
         ComputerProductPage<T> computerProductPage = new ComputerProductPage<>(driver);
         T computerEssentialComp =
                 computerProductPage.computerProductEssentialComp(computerEssentialClass);
@@ -68,17 +79,83 @@ public class OrderComputerTestFlow<T extends ComputerProductEssentialComponent> 
         computerEssentialComp.clickAddToCartBtn();
 //        click on shopping cart link text:
         computerProductPage.headerComp().clickOnShoppingCart();
-        verifyTotalCartPrice();
     }
-    public void verifyTotalCartPrice () {
+
+    public void verifyCartPage() {
         CartPage cartPage = new CartPage(driver);
-        CartFooterComponent cartFooterComp=cartPage.cartFooterComp();
-        CartFooterTotalComponent cartFooterTotalComp = cartFooterComp.cartFooterTotalComp();
-        Map<String, Double> priceCatalogs = cartFooterTotalComp.priceCatalogs();
-        for (String priceType : priceCatalogs.keySet()) {
-            System.out.println((priceType + ": " + priceCatalogs.get(priceType)));
+//        Verify add correct product, price and qty
+        List<CartItemComponent> cartItemComps = cartPage.cartItemComps();
+        if (cartItemComps.isEmpty()) Assert.fail("[ERR] Can't find any cart item.");
+        CartItemComponent latestAddedItem = cartItemComps.get(cartItemComps.size() - 1);
+        Assert.assertEquals(totalPrice, latestAddedItem.unitPrice(),
+                "[ERR] Price after add to cart is not matched.");
+        Assert.assertEquals(qty, latestAddedItem.qty(),
+                "[ERR] Qty after add to cart is not matched. ");
+
+//        Verify unit price, qty and subtotal
+        double totalSubtotal = 0;
+        for (CartItemComponent cartItemComp : cartItemComps) {
+            double expectedTotalItemPrice = cartItemComp.qty() * cartItemComp.unitPrice();
+            double actualTotalItemPrice = cartItemComp.totalItemPrice();
+            Assert.assertEquals(expectedTotalItemPrice, actualTotalItemPrice,
+                    "[ERR] Subtotal of cart item is not match qty and unit price. ");
+            totalSubtotal += actualTotalItemPrice;
         }
+
+//        Verify checkout price
+        CartFooterTotalComponent cartFooterTotalComp= cartPage.cartFooterComp().cartFooterTotalComp();
+        Map<String, Double> priceCatalogs = cartFooterTotalComp.priceCatalogs();
+        double subtotal = 0;
+        double checkoutPrice = 0;
+        double extraFee = 0;
+        for (String priceType : priceCatalogs.keySet()) {
+            if (priceType.startsWith("Sub-Total")) subtotal = priceCatalogs.get(priceType);
+            else if (priceType.startsWith("Total")) checkoutPrice = priceCatalogs.get(priceType);
+            else extraFee = priceCatalogs.get(priceType);
+        }
+        Assert.assertEquals(subtotal + extraFee, checkoutPrice,
+                "[ERR] Checkout price is not matched subtotal and extra fee. ");
     }
+    public void clickTOSCheckboxAndCheckOut() {
+        CartPage cartPage = new CartPage(driver);
+        CartFooterTotalComponent cartFooterTotalComp = cartPage.cartFooterComp().cartFooterTotalComp();
+        cartFooterTotalComp.checkTOSCheckbox(true);
+        cartFooterTotalComp.clickOnCheckOutBtn();
+    }
+    public void clickOnCheckoutAsGuestBtn() {
+        new CheckoutOptionPage(driver).clickCheckoutAsGuestBtn();
+    }
+    public void inputBillingAddress() {
+        CheckoutPage checkoutPage = new CheckoutPage(driver);
+        BillAddressComponent billAddressComp = checkoutPage.checkoutDataComp().billAddressComp();
+        billAddressComp.handleAddressDropdownAppear();
+        billAddressComp.inputFirstname(defaultBillAddressData.getFirstname());
+        billAddressComp.inputLastname(defaultBillAddressData.getLastname());
+        billAddressComp.inputEmail(defaultBillAddressData.getEmail());
+        billAddressComp.inputCountry(defaultBillAddressData.getCountry());
+        billAddressComp.inputState(defaultBillAddressData.getState());
+        billAddressComp.inputCity(defaultBillAddressData.getCity());
+        billAddressComp.inputAddress1(defaultBillAddressData.getAdd1());
+        billAddressComp.inputZipcode(defaultBillAddressData.getZipcode());
+        billAddressComp.inputPhoneNum(defaultBillAddressData.getPhoneNum());
+        billAddressComp.clickOnContinueBtn();
+    }
+
+    public void inputShippingAddress() {
+    }
+
+    public void inputShippingMethod() {
+    }
+
+    public void inputPaymentMethod() {
+    }
+
+    public void inputPaymentInfo() {
+    }
+
+    public void confirmOrder() {
+    }
+
     private static double extractAdditionalPriceFromText(String text) {
         double additionalPrice = 0;
         Pattern pattern = Pattern.compile("\\[\\+?(.+)\\]");
@@ -91,5 +168,6 @@ public class OrderComputerTestFlow<T extends ComputerProductEssentialComponent> 
         }
         return additionalPrice;
     }
+
 
 }

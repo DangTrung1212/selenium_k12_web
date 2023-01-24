@@ -12,11 +12,11 @@ public class DataObjectBuilder {
         String currentProjectLocation = System.getProperty("user.dir");
         String fileAbsolutePath = currentProjectLocation + fileLocation;
         try (
-                Reader jsonContentReader = Files.newBufferedReader(Paths.get(fileAbsolutePath));) {
+                Reader jsonContentReader = Files.newBufferedReader(Paths.get(fileAbsolutePath))) {
             Gson gson = new Gson();
             data = gson.fromJson(jsonContentReader, dataType);
         } catch (Exception e) {
-            throw  new IllegalArgumentException("[ERR] File location is not correct " + fileAbsolutePath);
+            throw new IllegalArgumentException("[ERR] File location is not correct " + fileAbsolutePath);
         }
         return data;
     }

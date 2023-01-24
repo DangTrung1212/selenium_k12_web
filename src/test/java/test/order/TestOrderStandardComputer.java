@@ -15,8 +15,10 @@ public class TestOrderStandardComputer extends BaseTest {
         driver.get(Urls.demoEcommerceBaseUrl + Urls.standardComputerSlug);
         OrderComputerTestFlow<StandardComputerEssentialComponent> orderComputerTestFlow =
                 new OrderComputerTestFlow<>(driver,computerData);
-        orderComputerTestFlow.orderComputerFlow(
+        orderComputerTestFlow.buildComputerAndAddToCart(
                 StandardComputerEssentialComponent.class);
+        orderComputerTestFlow.verifyCartPage();
+        orderComputerTestFlow.clickTOSCheckboxAndCheckOut();
     }
     @DataProvider
     private ComputerData[] computerData() {

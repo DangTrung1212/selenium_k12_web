@@ -10,10 +10,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@ComponentCssSelector(value = ".cart-total")
+@ComponentCssSelector(value = ".totals")
 public class CartFooterTotalComponent extends Component {
     private final By priceTypeSel = By.cssSelector(".cart-total-left");
     private final By priceValueSel = By.cssSelector(".cart-total-right");
+    private final By tOSCheckboxSel = By.cssSelector("#termsofservice");
+    private final By checkoutBtnSel = By.cssSelector(".checkout-button");
 
     public CartFooterTotalComponent(WebDriver driver, WebElement element) {
         super(driver, element);
@@ -31,5 +33,15 @@ public class CartFooterTotalComponent extends Component {
         }
         return priceCatalogs;
     }
-
+    public void checkTOSCheckbox(boolean isNeedToBeChecked) {
+        WebElement tOSCheckBox = element.findElement(tOSCheckboxSel);
+        if (isNeedToBeChecked) {
+            if (!tOSCheckBox.isSelected()) tOSCheckBox.click();
+        } else {
+            if (tOSCheckBox.isSelected()) tOSCheckBox.click();
+        }
+    }
+    public void clickOnCheckOutBtn() {
+        element.findElement(checkoutBtnSel).click();
+    }
 }
