@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import test.BaseTest;
 import test_data.DataObjectBuilder;
 import test_data.computer.ComputerData;
+import test_data.payment_method.PaymentMethod;
 import test_flows.order.OrderComputerTestFlow;
 import urls.Urls;
 
@@ -22,10 +23,10 @@ public class TestOrderCheapComputer extends BaseTest {
         orderComputerTestFlow.clickOnCheckoutAsGuestBtn();
         orderComputerTestFlow.inputBillingAddress();
 
-//        orderComputerTestFlow.inputShippingAddress();
-//        orderComputerTestFlow.inputShippingMethod();
-//        orderComputerTestFlow.inputPaymentMethod();
-//        orderComputerTestFlow.inputPaymentInfo();
+        orderComputerTestFlow.inputShippingAddress();
+        orderComputerTestFlow.inputShippingMethod();
+        orderComputerTestFlow.inputPaymentMethod(PaymentMethod.getRandomPaymentMethod());
+        orderComputerTestFlow.inputPaymentInfo();
 //        orderComputerTestFlow.confirmOrder();
     }
     @DataProvider

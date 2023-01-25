@@ -2,7 +2,12 @@ package test_flows.order;
 
 import models.components.cart.CartFooterTotalComponent;
 import models.components.cart.CartItemComponent;
-import models.components.checkout.checkout_data.BillAddressComponent;
+import models.components.checkout.checkout_data.*;
+
+import models.components.checkout.checkout_data.payment_info.CODComponent;
+import models.components.checkout.checkout_data.payment_info.CreditCardInfoComponent;
+import models.components.checkout.checkout_data.payment_info.MoneyOrderComponent;
+import models.components.checkout.checkout_data.payment_info.PurchaseOrderComponent;
 import models.components.product.product_detail.computer.ComputerProductEssentialComponent;
 import models.pages.CartPage;
 import models.pages.checkout_page.CheckoutOptionPage;
@@ -12,10 +17,13 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import test_data.DataObjectBuilder;
 import test_data.computer.ComputerData;
+import test_data.payment_method.CreditCard;
+import test_data.payment_method.PaymentMethod;
 import test_data.user.UserBillAddressData;
 
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.security.SecureRandom;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,6 +37,7 @@ public class OrderComputerTestFlow<T extends ComputerProductEssentialComponent> 
             .buildDataObjectFrom(
                     "/src/test/java/test_data/user/DefaultBillingAddressData.json",
                     UserBillAddressData.class);
+    private PaymentMethod paymentMethod;
 
     public OrderComputerTestFlow(WebDriver driver, ComputerData computerData) {
         this.driver = driver;
@@ -103,7 +112,7 @@ public class OrderComputerTestFlow<T extends ComputerProductEssentialComponent> 
         }
 
 //        Verify checkout price
-        CartFooterTotalComponent cartFooterTotalComp= cartPage.cartFooterComp().cartFooterTotalComp();
+        CartFooterTotalComponent cartFooterTotalComp = cartPage.cartFooterComp().cartFooterTotalComp();
         Map<String, Double> priceCatalogs = cartFooterTotalComp.priceCatalogs();
         double subtotal = 0;
         double checkoutPrice = 0;
@@ -116,15 +125,18 @@ public class OrderComputerTestFlow<T extends ComputerProductEssentialComponent> 
         Assert.assertEquals(subtotal + extraFee, checkoutPrice,
                 "[ERR] Checkout price is not matched subtotal and extra fee. ");
     }
+
     public void clickTOSCheckboxAndCheckOut() {
         CartPage cartPage = new CartPage(driver);
         CartFooterTotalComponent cartFooterTotalComp = cartPage.cartFooterComp().cartFooterTotalComp();
         cartFooterTotalComp.checkTOSCheckbox(true);
         cartFooterTotalComp.clickOnCheckOutBtn();
     }
+
     public void clickOnCheckoutAsGuestBtn() {
         new CheckoutOptionPage(driver).clickCheckoutAsGuestBtn();
     }
+
     public void inputBillingAddress() {
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         BillAddressComponent billAddressComp = checkoutPage.checkoutDataComp().billAddressComp();
@@ -142,15 +154,61 @@ public class OrderComputerTestFlow<T extends ComputerProductEssentialComponent> 
     }
 
     public void inputShippingAddress() {
+        ShippingAddressComponent shippingAddressComp = new CheckoutPage(driver)
+                .checkoutDataComp().shippingAddressComp();
+        shippingAddressComp.clickOnContinueBtn();
     }
 
     public void inputShippingMethod() {
+        List<String> shippingMethodList = Arrays.asList("Ground", "Next Day Air", "2nd Day Air");
+        String randomMethod = shippingMethodList.get(new SecureRandom().nextInt(shippingMethodList.size()));
+        ShippingMethodComponent shippingMethodComp = new CheckoutPage(driver).checkoutDataComp().shippingMethodComp();
+        shippingMethodComp.selectShippingMethod(randomMethod);
+        shippingMethodComp.clickOnContinueBtn();
     }
 
-    public void inputPaymentMethod() {
+    public void inputPaymentMethod(PaymentMethod paymentMethod) {
+        if (paymentMethod == null) throw new IllegalArgumentException("[ERR] Payment method can't be null");
+        this.paymentMethod = paymentMethod;
+        PaymentMethodComponent paymentMethodComp = new CheckoutPage(driver).checkoutDataComp().paymentMethodComp();
+        paymentMethodComp.selectPaymentMethod(paymentMethod);
+        paymentMethodComp.clickOnContinueBtn();
     }
 
     public void inputPaymentInfo() {
+
+        PaymentInfoComponent paymentInfoComp = new CheckoutPage(driver)
+                .checkoutDataComp().paymentInfoComp();
+        switch (this.paymentMethod) {
+            case CREDIT_CARD:
+                List<CreditCard> creditCardList = Arrays.asList(CreditCard.values());
+                CreditCard creditCard = creditCardList.get(new SecureRandom().nextInt(creditCardList.size()));
+                CreditCardInfoComponent creditCardInfoComp = paymentInfoComp.creditCartInfoComp();
+                creditCardInfoComp.selectCreditCard(creditCard);
+                creditCardInfoComp.inputCardHolderName(defaultBillAddressData.getFirstname());
+                creditCardInfoComp.inputCardCode(creditCard.getCreditCardCode());
+                creditCardInfoComp.inputCardNumber(creditCard.getCreditCardNum());
+                creditCardInfoComp.inputExpiredMonth(creditCard.getExpiredMonth());
+                creditCardInfoComp.inputExpiredYear(creditCard.getExpiredYear());
+                creditCardInfoComp.clickOnContinueBtn();
+                break;
+            case PURCHASE_ORDER:
+                PurchaseOrderComponent purchaseOrderComp = paymentInfoComp.purchaseOrderComp();
+                purchaseOrderComp.inputPurchaseNum("000");
+                purchaseOrderComp.clickOnContinueBtn();
+                break;
+            case COD:
+                CODComponent codComponent = paymentInfoComp.codComp();
+                codComponent.verifyMessage();
+                codComponent.clickOnContinueBtn();
+                break;
+            case MONEY_ORDER:
+                MoneyOrderComponent moneyOrderComp = paymentInfoComp.moneyOrderComp();
+                moneyOrderComp.verifyMessage();
+                moneyOrderComp.clickOnContinueBtn();
+                break;
+
+        }
     }
 
     public void confirmOrder() {
@@ -158,7 +216,7 @@ public class OrderComputerTestFlow<T extends ComputerProductEssentialComponent> 
 
     private static double extractAdditionalPriceFromText(String text) {
         double additionalPrice = 0;
-        Pattern pattern = Pattern.compile("\\[\\+?(.+)\\]");
+        Pattern pattern = Pattern.compile("\\[\\+?(.+)]");
         try {
             Matcher matcher = pattern.matcher(text);
             if (matcher.find()) {
