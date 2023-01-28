@@ -11,26 +11,47 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.*;
 
 public class BaseTest {
-    protected static WebDriver driver;
+    protected WebDriver driver;
+    private List<DriverFactory> webDriverThreadPool = Collections.synchronizedList(new ArrayList<>());
+    private ThreadLocal<DriverFactory> driverThread;
+    private String browser;
 
-    @BeforeTest
-    public void initChromeSession() {
-        driver = DriverFactory.initChromeDriver();
+    //This method returns the WebDriver instance that is associated with the current thread
+    protected WebDriver getDriver() {
+        return driverThread.get().getDriver(browser);
+    }
+
+    //This method initializes a browser session before each test
+    @BeforeTest(description = "Init browser session")
+    @Parameters({"browser"})
+    public void initBrowserSession(String browser) {
+        //Sets the browser value to the one passed in as a parameter
+        this.browser = browser;
+        //Initializes the driverThread variable using a ThreadLocal with an initial value lambda
+        driverThread = ThreadLocal.withInitial(() -> {
+            //Creates a new instance of the DriverFactory class
+            DriverFactory webDriverThread = new DriverFactory();
+            //Adds this instance to the webDriverThreadPool list
+            webDriverThreadPool.add(webDriverThread);
+            //Returns the new instance of DriverFactory
+            return webDriverThread;
+        });
+        driver = driverThread.get().getDriver(this.browser);
     }
 
     @AfterTest(alwaysRun = true)
-    public void closeChromeSession() {
-        if (driver != null) driver.quit();
+    public void closeBrowserSession() {
+        driverThread.get().closeBrowserSession();
     }
 
     @AfterMethod
@@ -50,7 +71,7 @@ public class BaseTest {
                     calendar.get(Calendar.SECOND),
                     calendar.get(Calendar.MILLISECOND));
             File screenshotBase64Data = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            String fileLocation="";
+            String fileLocation = "";
             if (OS.isFamilyMac()) fileLocation = System.getProperty("user.dir") + "/screenshot/" + fileName;
             else if (OS.isFamilyWindows())
                 fileLocation = System.getProperty("user.dir") + "\\screenshot\\" + fileName;

@@ -4,20 +4,14 @@ import driver.DriverFactory;
 import models.components.product.homepage_product.ProductItemComponent;
 import models.pages.HomePage;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+import test.BaseTest;
 import urls.Urls;
 
 import java.util.List;
 
-public class TestFeatureProducts {
-    public static void main(String[] args) {
-        WebDriver driver = DriverFactory.initChromeDriver();
-        try {
-            testFeatureProducts(driver);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        driver.quit();
-    }
+public class TestFeatureProducts extends BaseTest {
+    @Test
     public static void testFeatureProducts(WebDriver driver) {
         driver.get(Urls.demoEcommerceBaseUrl);
         HomePage homePage = new HomePage(driver);

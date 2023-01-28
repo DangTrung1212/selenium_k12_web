@@ -10,7 +10,7 @@ import urls.Urls;
 import java.util.List;
 
 public class HoverAndNarrowDownHandler implements Urls {
-    private static final WebDriver driver = DriverFactory.initChromeDriver();
+    static WebDriver driver;
     private static final By figureSel = By.cssSelector(".figure");
     private static final By figCaptionNameSel = By.cssSelector(".figcaption h5");
     private static final By figCaptionLinkSel = By.cssSelector(".figcaption a");
