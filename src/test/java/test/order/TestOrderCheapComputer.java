@@ -1,6 +1,7 @@
 package test.order;
 
 import models.components.product.product_detail.computer.CheapComputerEssentialComponent;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import test.BaseTest;
@@ -27,7 +28,6 @@ public class TestOrderCheapComputer extends BaseTest {
         orderComputerTestFlow.inputShippingMethod();
         orderComputerTestFlow.inputPaymentMethod(PaymentMethod.getRandomPaymentMethod());
         orderComputerTestFlow.inputPaymentInfo();
-//        orderComputerTestFlow.confirmOrder();
     }
     @DataProvider
     private ComputerData[] computerData() {

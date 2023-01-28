@@ -54,6 +54,7 @@ public class DriverFactory {
             driver.quit();
         }
     }
+
     public static WebDriver initChromeDriver() {
         return new ChromeDriver();
     }

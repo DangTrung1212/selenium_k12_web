@@ -37,16 +37,12 @@ public class BaseTest {
     public void initBrowserSession(String browser) {
         //Sets the browser value to the one passed in as a parameter
         this.browser = browser;
-        //Initializes the driverThread variable using a ThreadLocal with an initial value lambda
         driverThread = ThreadLocal.withInitial(() -> {
-            //Creates a new instance of the DriverFactory class
             DriverFactory webDriverThread = new DriverFactory();
-            //Adds this instance to the webDriverThreadPool list
             webDriverThreadPool.add(webDriverThread);
-            //Returns the new instance of DriverFactory
             return webDriverThread;
         });
-        driver = driverThread.get().getDriver(this.browser);
+        driver = getDriver();
     }
 
     @AfterTest(alwaysRun = true)
@@ -70,6 +66,7 @@ public class BaseTest {
                     calendar.get(Calendar.MINUTE),
                     calendar.get(Calendar.SECOND),
                     calendar.get(Calendar.MILLISECOND));
+            WebDriver driver = getDriver();
             File screenshotBase64Data = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             String fileLocation = "";
             if (OS.isFamilyMac()) fileLocation = System.getProperty("user.dir") + "/screenshot/" + fileName;
