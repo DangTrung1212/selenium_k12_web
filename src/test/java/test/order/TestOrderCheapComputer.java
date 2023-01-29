@@ -14,6 +14,7 @@ import urls.Urls;
 public class TestOrderCheapComputer extends BaseTest {
     @Test(dataProvider = "computerData")
     public void testOrderCheapComputer(ComputerData computerData) {
+        WebDriver driver = getDriver();
         driver.get(Urls.demoEcommerceBaseUrl + Urls.cheapComputerSlug);
         OrderComputerTestFlow<CheapComputerEssentialComponent> orderComputerTestFlow =
                 new OrderComputerTestFlow<>(driver,computerData);

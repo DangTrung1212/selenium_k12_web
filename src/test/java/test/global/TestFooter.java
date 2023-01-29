@@ -10,6 +10,7 @@ import test_flows.global.FooterTestFlow;
 import urls.Urls;
 
 public class TestFooter extends BaseTest {
+    WebDriver driver = getDriver();
     @Test
     public void testFooter() {
         driver.get(Urls.demoEcommerceBaseUrl);

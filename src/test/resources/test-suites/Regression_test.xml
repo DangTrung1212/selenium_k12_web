@@ -5,12 +5,14 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="test.order.TestOrderCheapComputer" />
+            <class name="test.order.TestOrderStandardComputer" />
         </classes>
     </test>
     <test name="Standard Computer" parallel="tests" thread-count="10">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="test.order.TestOrderStandardComputer" />
+            <class name="test.order.TestOrderCheapComputer" />
         </classes>
     </test>
 </suite>

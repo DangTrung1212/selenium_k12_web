@@ -30,11 +30,9 @@ public class DriverFactory {
             }
             switch (browserType) {
                 case chrome:
-//                    desiredCapabilities.setBrowserName(browserType.getBrowserName());
                     desiredCapabilities.setBrowserName(BrowserType.chrome.getBrowserName());
                     break;
                 case firefox:
-//                    desiredCapabilities.setBrowserName(browserType.getBrowserName());
                     desiredCapabilities.setBrowserName(BrowserType.firefox.getBrowserName());
                     break;
             }
@@ -42,6 +40,7 @@ public class DriverFactory {
             try {
                 driver = new RemoteWebDriver(new URL(hub), desiredCapabilities);
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+                driver.manage().window().maximize();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -56,6 +55,9 @@ public class DriverFactory {
     }
 
     public static WebDriver initChromeDriver() {
-        return new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
+        System.out.println(SeleniumManager.getInstance().getDriverPath("chromedriver"));
+        System.out.println(SeleniumManager.getInstance().getDriverPath("geckodriver"));
+        return driver;
     }
 }

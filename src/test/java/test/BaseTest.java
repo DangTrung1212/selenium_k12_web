@@ -21,9 +21,8 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class BaseTest {
-    protected WebDriver driver;
-    private List<DriverFactory> webDriverThreadPool = Collections.synchronizedList(new ArrayList<>());
-    private ThreadLocal<DriverFactory> driverThread;
+    private final static List<DriverFactory> webDriverThreadPool = Collections.synchronizedList(new ArrayList<>());
+    private static ThreadLocal<DriverFactory> driverThread;
     private String browser;
 
     //This method returns the WebDriver instance that is associated with the current thread
@@ -42,7 +41,6 @@ public class BaseTest {
             webDriverThreadPool.add(webDriverThread);
             return webDriverThread;
         });
-        driver = getDriver();
     }
 
     @AfterTest(alwaysRun = true)
