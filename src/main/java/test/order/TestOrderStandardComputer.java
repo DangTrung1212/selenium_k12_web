@@ -17,7 +17,7 @@ public class TestOrderStandardComputer extends BaseTest {
         WebDriver driver = getDriver();
         driver.get(Urls.demoEcommerceBaseUrl + Urls.standardComputerSlug);
         OrderComputerTestFlow<StandardComputerEssentialComponent> orderComputerTestFlow =
-                new OrderComputerTestFlow<>(driver,computerData);
+                new OrderComputerTestFlow<>(driver, computerData);
         orderComputerTestFlow.buildComputerAndAddToCart(
                 StandardComputerEssentialComponent.class);
         orderComputerTestFlow.verifyCartPage();
@@ -29,9 +29,10 @@ public class TestOrderStandardComputer extends BaseTest {
         orderComputerTestFlow.inputPaymentMethod(PaymentMethod.getRandomPaymentMethod());
         orderComputerTestFlow.inputPaymentInfo();
     }
+
     @DataProvider
     private ComputerData[] computerData() {
-        String jsonDataLocation = "/src/test/java/test_data/computer/StandardComputerDataList.json";
+        String jsonDataLocation = "/src/main/java/test_data/computer/StandardComputerDataList.json";
         return DataObjectBuilder.buildDataObjectFrom(
                 jsonDataLocation, ComputerData[].class);
     }

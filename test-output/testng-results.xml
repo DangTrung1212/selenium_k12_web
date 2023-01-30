@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="4" ignored="0" total="9" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Regression" duration-ms="57757" started-at="2023-01-30T23:03:19 ICT" finished-at="2023-01-30T23:04:17 ICT">
+    <groups>
+    </groups>
+    <test name="Group 1" duration-ms="10628" started-at="2023-01-30T23:03:19 ICT" finished-at="2023-01-30T23:03:30 ICT">
+      <class name="test.global.TestFeatureProducts">
+        <test-method status="PASS" signature="initBrowserSession(java.lang.String)[pri:0, instance:test.global.TestFeatureProducts@7ee955a8]" name="initBrowserSession" is-config="true" duration-ms="16" started-at="2023-01-30T23:03:19 ICT" description="Init browser session" finished-at="2023-01-30T23:03:19 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initBrowserSession -->
+        <test-method status="PASS" signature="testFeatureProducts()[pri:0, instance:test.global.TestFeatureProducts@7ee955a8]" name="testFeatureProducts" duration-ms="9734" started-at="2023-01-30T23:03:20 ICT" finished-at="2023-01-30T23:03:29 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFeatureProducts -->
+        <test-method status="PASS" signature="captureScreenShot(org.testng.ITestResult)[pri:0, instance:test.global.TestFeatureProducts@7ee955a8]" name="captureScreenShot" is-config="true" duration-ms="3" started-at="2023-01-30T23:03:29 ICT" finished-at="2023-01-30T23:03:29 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testFeatureProducts status=SUCCESS method=TestFeatureProducts.testFeatureProducts()[pri:0, instance:test.global.TestFeatureProducts@7ee955a8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenShot -->
+        <test-method status="PASS" signature="closeBrowserSession()[pri:0, instance:test.global.TestFeatureProducts@7ee955a8]" name="closeBrowserSession" is-config="true" duration-ms="709" started-at="2023-01-30T23:03:29 ICT" finished-at="2023-01-30T23:03:30 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowserSession -->
+      </class> <!-- test.global.TestFeatureProducts -->
+    </test> <!-- Group 1 -->
+    <test name="Group 2" duration-ms="28318" started-at="2023-01-30T23:03:19 ICT" finished-at="2023-01-30T23:03:48 ICT">
+      <class name="test.global.TestFooter">
+        <test-method status="PASS" signature="initBrowserSession(java.lang.String)[pri:0, instance:test.global.TestFooter@7219ec67]" name="initBrowserSession" is-config="true" duration-ms="16" started-at="2023-01-30T23:03:19 ICT" description="Init browser session" finished-at="2023-01-30T23:03:19 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initBrowserSession -->
+        <test-method status="PASS" signature="testFooter()[pri:0, instance:test.global.TestFooter@7219ec67]" name="testFooter" duration-ms="9983" started-at="2023-01-30T23:03:20 ICT" finished-at="2023-01-30T23:03:29 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFooter -->
+        <test-method status="PASS" signature="testProductCatFooterComp()[pri:0, instance:test.global.TestFooter@7219ec67]" name="testProductCatFooterComp" duration-ms="17621" started-at="2023-01-30T23:03:29 ICT" finished-at="2023-01-30T23:03:47 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testProductCatFooterComp -->
+        <test-method status="PASS" signature="captureScreenShot(org.testng.ITestResult)[pri:0, instance:test.global.TestFooter@7219ec67]" name="captureScreenShot" is-config="true" duration-ms="0" started-at="2023-01-30T23:03:29 ICT" finished-at="2023-01-30T23:03:29 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testFooter status=SUCCESS method=TestFooter.testFooter()[pri:0, instance:test.global.TestFooter@7219ec67] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenShot -->
+        <test-method status="PASS" signature="captureScreenShot(org.testng.ITestResult)[pri:0, instance:test.global.TestFooter@7219ec67]" name="captureScreenShot" is-config="true" duration-ms="0" started-at="2023-01-30T23:03:47 ICT" finished-at="2023-01-30T23:03:47 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testProductCatFooterComp status=SUCCESS method=TestFooter.testProductCatFooterComp()[pri:0, instance:test.global.TestFooter@7219ec67] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenShot -->
+        <test-method status="PASS" signature="closeBrowserSession()[pri:0, instance:test.global.TestFooter@7219ec67]" name="closeBrowserSession" is-config="true" duration-ms="653" started-at="2023-01-30T23:03:47 ICT" finished-at="2023-01-30T23:03:48 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowserSession -->
+      </class> <!-- test.global.TestFooter -->
+    </test> <!-- Group 2 -->
+    <test name="Group 3" duration-ms="56988" started-at="2023-01-30T23:03:19 ICT" finished-at="2023-01-30T23:04:16 ICT">
+      <class name="test.order.TestOrderCheapComputer">
+        <test-method status="PASS" signature="initBrowserSession(java.lang.String)[pri:0, instance:test.order.TestOrderCheapComputer@96def03]" name="initBrowserSession" is-config="true" duration-ms="16" started-at="2023-01-30T23:03:19 ICT" description="Init browser session" finished-at="2023-01-30T23:03:19 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initBrowserSession -->
+        <test-method status="FAIL" signature="testOrderCheapComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderCheapComputer@96def03]" name="testOrderCheapComputer" duration-ms="34181" started-at="2023-01-30T23:03:20 ICT" data-provider="computerData" finished-at="2023-01-30T23:03:54 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ComputerData{processorType='Fast', ram='8 GB', hdd='320 GB', os='null', software='Image Viever'}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at models.components.checkout.checkout_data.payment_info.MoneyOrderComponent.verifyMessage(MoneyOrderComponent.java:21)
+at test_flows.order.OrderComputerTestFlow.inputPaymentInfo(OrderComputerTestFlow.java:207)
+at test.order.TestOrderCheapComputer.testOrderCheapComputer(TestOrderCheapComputer.java:31)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:750)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOrderCheapComputer -->
+        <test-method status="PASS" signature="captureScreenShot(org.testng.ITestResult)[pri:0, instance:test.order.TestOrderCheapComputer@96def03]" name="captureScreenShot" is-config="true" duration-ms="214" started-at="2023-01-30T23:03:54 ICT" finished-at="2023-01-30T23:03:54 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testOrderCheapComputer status=FAILURE method=TestOrderCheapComputer.testOrderCheapComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderCheapComputer@96def03] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenShot -->
+        <test-method status="PASS" signature="testOrderCheapComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderCheapComputer@96def03]" name="testOrderCheapComputer" duration-ms="10754" started-at="2023-01-30T23:03:54 ICT" data-provider="computerData" finished-at="2023-01-30T23:04:05 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ComputerData{processorType='Fast', ram='4 GB', hdd='400 GB', os='null', software='Office Suite'}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOrderCheapComputer -->
+        <test-method status="PASS" signature="captureScreenShot(org.testng.ITestResult)[pri:0, instance:test.order.TestOrderCheapComputer@96def03]" name="captureScreenShot" is-config="true" duration-ms="0" started-at="2023-01-30T23:04:05 ICT" finished-at="2023-01-30T23:04:05 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testOrderCheapComputer status=SUCCESS method=TestOrderCheapComputer.testOrderCheapComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderCheapComputer@96def03] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenShot -->
+        <test-method status="FAIL" signature="testOrderCheapComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderCheapComputer@96def03]" name="testOrderCheapComputer" duration-ms="10845" started-at="2023-01-30T23:04:05 ICT" data-provider="computerData" finished-at="2023-01-30T23:04:16 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ComputerData{processorType='Fast', ram='2 GB', hdd='320 GB', os='null', software='Other Office Suite'}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at models.components.checkout.checkout_data.payment_info.MoneyOrderComponent.verifyMessage(MoneyOrderComponent.java:21)
+at test_flows.order.OrderComputerTestFlow.inputPaymentInfo(OrderComputerTestFlow.java:207)
+at test.order.TestOrderCheapComputer.testOrderCheapComputer(TestOrderCheapComputer.java:31)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:750)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOrderCheapComputer -->
+        <test-method status="PASS" signature="captureScreenShot(org.testng.ITestResult)[pri:0, instance:test.order.TestOrderCheapComputer@96def03]" name="captureScreenShot" is-config="true" duration-ms="220" started-at="2023-01-30T23:04:16 ICT" finished-at="2023-01-30T23:04:16 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testOrderCheapComputer status=FAILURE method=TestOrderCheapComputer.testOrderCheapComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderCheapComputer@96def03] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenShot -->
+        <test-method status="PASS" signature="closeBrowserSession()[pri:0, instance:test.order.TestOrderCheapComputer@96def03]" name="closeBrowserSession" is-config="true" duration-ms="656" started-at="2023-01-30T23:04:16 ICT" finished-at="2023-01-30T23:04:16 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowserSession -->
+      </class> <!-- test.order.TestOrderCheapComputer -->
+    </test> <!-- Group 3 -->
+    <test name="Group 4" duration-ms="57757" started-at="2023-01-30T23:03:19 ICT" finished-at="2023-01-30T23:04:17 ICT">
+      <class name="test.order.TestOrderStandardComputer">
+        <test-method status="PASS" signature="initBrowserSession(java.lang.String)[pri:0, instance:test.order.TestOrderStandardComputer@670002]" name="initBrowserSession" is-config="true" duration-ms="16" started-at="2023-01-30T23:03:19 ICT" description="Init browser session" finished-at="2023-01-30T23:03:19 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initBrowserSession -->
+        <test-method status="FAIL" signature="testOrderStandardComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderStandardComputer@670002]" name="testOrderStandardComputer" duration-ms="34907" started-at="2023-01-30T23:03:20 ICT" data-provider="computerData" finished-at="2023-01-30T23:03:54 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ComputerData{processorType='2.2 GHz', ram='8GB', hdd='400 GB', os='Ubuntu', software='Microsoft Office'}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <input type="button" class="button-1 payment-method-next-step-button" onclick="PaymentMethod.save()" value="Continue"> is not clickable at point (369, 684). Other element would receive the click: <a href="#" onclick="Checkout.back(); return false;">...</a>
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [122e4d2fae43461b1f0ca254c8068cd1, clickElement {id=eb85ce64-99db-4c79-8c1b-9eeb5b90e015}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52587}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://192.168.1.18:4444/sess..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[[[[[[[RemoteWebDriver: chrome on WINDOWS (122e4d2fae43461b1f0ca254c8068cd1)] -> tag name: html]] -> css selector: .checkout-data]] -> css selector: #opc-payment_method]] -> css selector: input[value="Continue"]]
+Session ID: 122e4d2fae43461b1f0ca254c8068cd1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input type="button" class="button-1 payment-method-next-step-button" onclick="PaymentMethod.save()" value="Continue"> is not clickable at point (369, 684). Other element would receive the click: <a href="#" onclick="Checkout.back(); return false;">...</a>
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [122e4d2fae43461b1f0ca254c8068cd1, clickElement {id=eb85ce64-99db-4c79-8c1b-9eeb5b90e015}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52587}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://192.168.1.18:4444/sess..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[[[[[[[RemoteWebDriver: chrome on WINDOWS (122e4d2fae43461b1f0ca254c8068cd1)] -> tag name: html]] -> css selector: .checkout-data]] -> css selector: #opc-payment_method]] -> css selector: input[value="Continue"]]
+Session ID: 122e4d2fae43461b1f0ca254c8068cd1
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+at models.components.checkout.checkout_data.StepCheckoutComponent.clickOnContinueBtn(StepCheckoutComponent.java:15)
+at test_flows.order.OrderComputerTestFlow.inputPaymentMethod(OrderComputerTestFlow.java:175)
+at test.order.TestOrderStandardComputer.testOrderStandardComputer(TestOrderStandardComputer.java:29)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:750)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOrderStandardComputer -->
+        <test-method status="PASS" signature="captureScreenShot(org.testng.ITestResult)[pri:0, instance:test.order.TestOrderStandardComputer@670002]" name="captureScreenShot" is-config="true" duration-ms="296" started-at="2023-01-30T23:03:54 ICT" finished-at="2023-01-30T23:03:55 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testOrderStandardComputer status=FAILURE method=TestOrderStandardComputer.testOrderStandardComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderStandardComputer@670002] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenShot -->
+        <test-method status="FAIL" signature="testOrderStandardComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderStandardComputer@670002]" name="testOrderStandardComputer" duration-ms="10875" started-at="2023-01-30T23:03:55 ICT" data-provider="computerData" finished-at="2023-01-30T23:04:06 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ComputerData{processorType='2.5 GHz', ram='4GB', hdd='320 GB', os='Windows 7', software='Acrobat Reader'}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at models.components.checkout.checkout_data.payment_info.MoneyOrderComponent.verifyMessage(MoneyOrderComponent.java:21)
+at test_flows.order.OrderComputerTestFlow.inputPaymentInfo(OrderComputerTestFlow.java:207)
+at test.order.TestOrderStandardComputer.testOrderStandardComputer(TestOrderStandardComputer.java:30)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:750)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOrderStandardComputer -->
+        <test-method status="PASS" signature="captureScreenShot(org.testng.ITestResult)[pri:0, instance:test.order.TestOrderStandardComputer@670002]" name="captureScreenShot" is-config="true" duration-ms="193" started-at="2023-01-30T23:04:06 ICT" finished-at="2023-01-30T23:04:06 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testOrderStandardComputer status=FAILURE method=TestOrderStandardComputer.testOrderStandardComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderStandardComputer@670002] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenShot -->
+        <test-method status="PASS" signature="testOrderStandardComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderStandardComputer@670002]" name="testOrderStandardComputer" duration-ms="10708" started-at="2023-01-30T23:04:06 ICT" data-provider="computerData" finished-at="2023-01-30T23:04:17 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ComputerData{processorType='2.2 GHz', ram='2 GB', hdd='320 GB', os='Windows 10', software='Total Commander'}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOrderStandardComputer -->
+        <test-method status="PASS" signature="captureScreenShot(org.testng.ITestResult)[pri:0, instance:test.order.TestOrderStandardComputer@670002]" name="captureScreenShot" is-config="true" duration-ms="5" started-at="2023-01-30T23:04:17 ICT" finished-at="2023-01-30T23:04:17 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testOrderStandardComputer status=SUCCESS method=TestOrderStandardComputer.testOrderStandardComputer(test_data.computer.ComputerData)[pri:0, instance:test.order.TestOrderStandardComputer@670002] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenShot -->
+        <test-method status="PASS" signature="closeBrowserSession()[pri:0, instance:test.order.TestOrderStandardComputer@670002]" name="closeBrowserSession" is-config="true" duration-ms="667" started-at="2023-01-30T23:04:17 ICT" finished-at="2023-01-30T23:04:17 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowserSession -->
+      </class> <!-- test.order.TestOrderStandardComputer -->
+    </test> <!-- Group 4 -->
+  </suite> <!-- Regression -->
+</testng-results>

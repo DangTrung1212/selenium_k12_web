@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Regression</th></tr>
+<tr><td><a href="#t0">Group 1</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">10,628</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Group 2</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">28,318</td><td></td><td></td></tr>
+<tr><td><a href="#t2">Group 3</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">56,988</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">Group 4</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">57,757</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">5</th><th class="num">0</th><th class="num">0</th><th class="num attn">4</th><th class="num">153,691</th><th colspan="2"></th></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Regression</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Group 1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">test.global.TestFeatureProducts</td><td><a href="#m0">testFeatureProducts</a></td><td rowspan="1">1675094600002</td><td rowspan="1">9734</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Group 2 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">test.global.TestFooter</td><td><a href="#m1">testFooter</a></td><td rowspan="1">1675094600002</td><td rowspan="1">9983</td></tr><tr class="passedeven"><td><a href="#m2">testProductCatFooterComp</a></td><td rowspan="1">1675094609994</td><td rowspan="1">17621</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">Group 3 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">test.order.TestOrderCheapComputer</td><td><a href="#m3">testOrderCheapComputer</a></td><td rowspan="2">1675094600039</td><td rowspan="2">34181</td></tr><tr class="failedeven"><td><a href="#m4">testOrderCheapComputer</a></td></tr><tr><th colspan="4">Group 3 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">test.order.TestOrderCheapComputer</td><td><a href="#m5">testOrderCheapComputer</a></td><td rowspan="1">1675094634457</td><td rowspan="1">10754</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">Group 4 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">test.order.TestOrderStandardComputer</td><td><a href="#m6">testOrderStandardComputer</a></td><td rowspan="2">1675094635253</td><td rowspan="2">10875</td></tr><tr class="failedeven"><td><a href="#m7">testOrderStandardComputer</a></td></tr><tr><th colspan="4">Group 4 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">test.order.TestOrderStandardComputer</td><td><a href="#m8">testOrderStandardComputer</a></td><td rowspan="1">1675094646329</td><td rowspan="1">10708</td></tr></tbody>
+</table>
+<h2>Group 1</h2><h3 id="m0">test.global.TestFeatureProducts#testFeatureProducts</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Group 2</h2><h3 id="m1">test.global.TestFooter#testFooter</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">test.global.TestFooter#testProductCatFooterComp</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Group 3</h2><h3 id="m3">test.order.TestOrderCheapComputer#testOrderCheapComputer</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>ComputerData{processorType=&apos;Fast&apos;, ram=&apos;8 GB&apos;, hdd=&apos;320 GB&apos;, os=&apos;null&apos;, software=&apos;Image Viever&apos;}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at models.components.checkout.checkout_data.payment_info.MoneyOrderComponent.verifyMessage(MoneyOrderComponent.java:21)
+	at test_flows.order.OrderComputerTestFlow.inputPaymentInfo(OrderComputerTestFlow.java:207)
+	at test.order.TestOrderCheapComputer.testOrderCheapComputer(TestOrderCheapComputer.java:31)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">test.order.TestOrderCheapComputer#testOrderCheapComputer</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>ComputerData{processorType=&apos;Fast&apos;, ram=&apos;2 GB&apos;, hdd=&apos;320 GB&apos;, os=&apos;null&apos;, software=&apos;Other Office Suite&apos;}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at models.components.checkout.checkout_data.payment_info.MoneyOrderComponent.verifyMessage(MoneyOrderComponent.java:21)
+	at test_flows.order.OrderComputerTestFlow.inputPaymentInfo(OrderComputerTestFlow.java:207)
+	at test.order.TestOrderCheapComputer.testOrderCheapComputer(TestOrderCheapComputer.java:31)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">test.order.TestOrderCheapComputer#testOrderCheapComputer</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>ComputerData{processorType=&apos;Fast&apos;, ram=&apos;4 GB&apos;, hdd=&apos;400 GB&apos;, os=&apos;null&apos;, software=&apos;Office Suite&apos;}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Group 4</h2><h3 id="m6">test.order.TestOrderStandardComputer#testOrderStandardComputer</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>ComputerData{processorType=&apos;2.5 GHz&apos;, ram=&apos;4GB&apos;, hdd=&apos;320 GB&apos;, os=&apos;Windows 7&apos;, software=&apos;Acrobat Reader&apos;}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at models.components.checkout.checkout_data.payment_info.MoneyOrderComponent.verifyMessage(MoneyOrderComponent.java:21)
+	at test_flows.order.OrderComputerTestFlow.inputPaymentInfo(OrderComputerTestFlow.java:207)
+	at test.order.TestOrderStandardComputer.testOrderStandardComputer(TestOrderStandardComputer.java:30)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">test.order.TestOrderStandardComputer#testOrderStandardComputer</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>ComputerData{processorType=&apos;2.2 GHz&apos;, ram=&apos;8GB&apos;, hdd=&apos;400 GB&apos;, os=&apos;Ubuntu&apos;, software=&apos;Microsoft Office&apos;}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;button&quot; class=&quot;button-1 payment-method-next-step-button&quot; onclick=&quot;PaymentMethod.save()&quot; value=&quot;Continue&quot;&gt; is not clickable at point (369, 684). Other element would receive the click: &lt;a href=&quot;#&quot; onclick=&quot;Checkout.back(); return false;&quot;&gt;...&lt;/a&gt;
+  (Session info: chrome=109.0.5414.120)
+Build info: version: &apos;4.7.2&apos;, revision: &apos;4d4020c3b7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [122e4d2fae43461b1f0ca254c8068cd1, clickElement {id=eb85ce64-99db-4c79-8c1b-9eeb5b90e015}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52587}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://192.168.1.18:4444/sess..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[[[[[[[RemoteWebDriver: chrome on WINDOWS (122e4d2fae43461b1f0ca254c8068cd1)] -&gt; tag name: html]] -&gt; css selector: .checkout-data]] -&gt; css selector: #opc-payment_method]] -&gt; css selector: input[value=&quot;Continue&quot;]]
+Session ID: 122e4d2fae43461b1f0ca254c8068cd1
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at models.components.checkout.checkout_data.StepCheckoutComponent.clickOnContinueBtn(StepCheckoutComponent.java:15)
+	at test_flows.order.OrderComputerTestFlow.inputPaymentMethod(OrderComputerTestFlow.java:175)
+	at test.order.TestOrderStandardComputer.testOrderStandardComputer(TestOrderStandardComputer.java:29)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">test.order.TestOrderStandardComputer#testOrderStandardComputer</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>ComputerData{processorType=&apos;2.2 GHz&apos;, ram=&apos;2 GB&apos;, hdd=&apos;320 GB&apos;, os=&apos;Windows 10&apos;, software=&apos;Total Commander&apos;}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

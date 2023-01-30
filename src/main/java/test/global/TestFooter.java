@@ -10,9 +10,10 @@ import test_flows.global.FooterTestFlow;
 import urls.Urls;
 
 public class TestFooter extends BaseTest {
-    WebDriver driver = getDriver();
+
     @Test
     public void testFooter() {
+        WebDriver driver = getDriver();
         driver.get(Urls.demoEcommerceBaseUrl);
         FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
         footerTestFlow.verifyFooterComponent();
@@ -20,6 +21,7 @@ public class TestFooter extends BaseTest {
 
     @Test
     public void testProductCatFooterComp() {
+        WebDriver driver = getDriver();
         driver.get(Urls.demoEcommerceBaseUrl);
         FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
         footerTestFlow.verifyProductCatFooterComponent();

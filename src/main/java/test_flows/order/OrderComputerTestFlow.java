@@ -35,7 +35,7 @@ public class OrderComputerTestFlow<T extends ComputerProductEssentialComponent> 
     private final int qty;
     private final UserBillAddressData defaultBillAddressData = DataObjectBuilder
             .buildDataObjectFrom(
-                    "/src/test/java/test_data/user/DefaultBillingAddressData.json",
+                    "/src/main/java/test_data/user/DefaultBillingAddressData.json",
                     UserBillAddressData.class);
     private PaymentMethod paymentMethod;
 

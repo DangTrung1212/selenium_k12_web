@@ -12,7 +12,8 @@ import java.util.List;
 
 public class TestFeatureProducts extends BaseTest {
     @Test
-    public static void testFeatureProducts(WebDriver driver) {
+    public void testFeatureProducts() {
+        WebDriver driver = getDriver();
         driver.get(Urls.demoEcommerceBaseUrl);
         HomePage homePage = new HomePage(driver);
         List<ProductItemComponent> productItemComponents =homePage.productGridComponent().productItemComps();

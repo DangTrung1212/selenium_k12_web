@@ -32,7 +32,7 @@ public class TestOrderCheapComputer extends BaseTest {
     }
     @DataProvider
     private ComputerData[] computerData() {
-        String jsonDataLocation = "/src/test/java/test_data/computer/CheapComputerDataList.json";
+        String jsonDataLocation = "/src/main/java/test_data/computer/CheapComputerDataList.json";
         return DataObjectBuilder.buildDataObjectFrom(
                 jsonDataLocation, ComputerData[].class);
     }
