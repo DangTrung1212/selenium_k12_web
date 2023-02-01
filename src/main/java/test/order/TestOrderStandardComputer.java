@@ -4,6 +4,7 @@ import models.components.product.product_detail.computer.StandardComputerEssenti
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import support.cookie.CookieHelper;
 import test.BaseTest;
 import test_data.DataObjectBuilder;
 import test_data.computer.ComputerData;
@@ -15,7 +16,13 @@ public class TestOrderStandardComputer extends BaseTest {
     @Test(dataProvider = "computerData")
     public void testOrderStandardComputer(ComputerData computerData) {
         WebDriver driver = getDriver();
+        CookieHelper.addCookieToDriver(driver);
         driver.get(Urls.demoEcommerceBaseUrl + Urls.standardComputerSlug);
+        try {
+            Thread.sleep(10_000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         OrderComputerTestFlow<StandardComputerEssentialComponent> orderComputerTestFlow =
                 new OrderComputerTestFlow<>(driver, computerData);
         orderComputerTestFlow.buildComputerAndAddToCart(

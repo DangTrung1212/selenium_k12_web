@@ -4,6 +4,7 @@ import models.components.product.product_detail.computer.CheapComputerEssentialC
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import support.cookie.CookieHelper;
 import test.BaseTest;
 import test_data.DataObjectBuilder;
 import test_data.computer.ComputerData;
@@ -29,6 +30,7 @@ public class TestOrderCheapComputer extends BaseTest {
         orderComputerTestFlow.inputShippingMethod();
         orderComputerTestFlow.inputPaymentMethod(PaymentMethod.getRandomPaymentMethod());
         orderComputerTestFlow.inputPaymentInfo();
+        CookieHelper.saveCookie(driver, "demowebshop.tricentis.com");
     }
     @DataProvider
     private ComputerData[] computerData() {

@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression Test">
+    <test name="computer">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="test.order.TestOrderCheapComputer" />
+        </classes>
+    </test>
+    <test name="Standard Computer">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="test.order.TestOrderStandardComputer" />
+        </classes>
+    </test>
+</suite>
