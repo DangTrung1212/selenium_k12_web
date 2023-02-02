@@ -10,6 +10,7 @@ public class CookieObject {
     private String expiry;
     private boolean isSecure;
     private boolean isHttpOnly;
+
     private String sameSite;
 
     public String getName() {
@@ -40,21 +41,8 @@ public class CookieObject {
         return isHttpOnly;
     }
 
+
     public String getSameSite() {
         return sameSite;
-    }
-
-    @Override
-    public String toString() {
-        return "CookieObject{" +
-                "name='" + name + '\'' +
-                ", value='" + value + '\'' +
-                ", domain='" + domain + '\'' +
-                ", path='" + path + '\'' +
-                ", expiry=" + expiry +
-                ", isSecure=" + isSecure +
-                ", isHttpOnly=" + isHttpOnly +
-                ", sameSite='" + sameSite + '\'' +
-                '}';
     }
 }

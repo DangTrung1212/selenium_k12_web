@@ -13,6 +13,7 @@ public class CookieHelper {
     private static final String relativePath = "/src/main/java/test_data/cookies/cookies.json";
     private static final String absolutePath = System.getProperty("user.dir")
             + relativePath;
+
     public static void saveCookie(WebDriver driver, String domain) {
         Set<Cookie> cookies = driver.manage().getCookies();
         List<Cookie> domainCookies = new ArrayList<>();
@@ -30,20 +31,14 @@ public class CookieHelper {
             e.printStackTrace();
         }
     }
+
     public static void addCookieToDriver(WebDriver driver) {
         CookieObject[] cookieObjects = DataObjectBuilder.buildDataObjectFrom(relativePath, CookieObject[].class);
         Cookie cookie;
         for (CookieObject cookieObject : cookieObjects) {
             Cookie.Builder builder = new Cookie.Builder(cookieObject.getName(), cookieObject.getValue());
-            builder.path(cookieObject.getPath());
-            builder.domain(cookieObject.getDomain());
-            builder.isHttpOnly(cookieObject.isHttpOnly());
-            builder.isSecure(cookieObject.isSecure());
-            builder.sameSite(cookieObject.getSameSite());
-            builder.sameSite(cookieObject.getExpiry());
             cookie = builder.build();
             driver.manage().addCookie(cookie);
         }
-        System.out.println(driver.manage().getCookies().toString());
     }
 }

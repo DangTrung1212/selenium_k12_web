@@ -16,7 +16,7 @@ public class TestOrderStandardComputer extends BaseTest {
     @Test(dataProvider = "computerData")
     public void testOrderStandardComputer(ComputerData computerData) {
         WebDriver driver = getDriver();
-        driver.get(Urls.demoEcommerceBaseUrl + Urls.standardComputerSlug);
+        driver.get(Urls.demoEcommerceBaseUrl);
         CookieHelper.addCookieToDriver(driver);
         driver.get(Urls.demoEcommerceBaseUrl + Urls.standardComputerSlug);
         try {
