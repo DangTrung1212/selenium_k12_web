@@ -15,15 +15,15 @@ public class CookieHelper {
             + relativePath;
     public static void saveCookie(WebDriver driver, String domain) {
         Set<Cookie> cookies = driver.manage().getCookies();
-//        List<Cookie> domainCookies = new ArrayList<>();
-//        for (Cookie cookie : cookies) {
-//            if (cookie.getDomain().equalsIgnoreCase(domain)) domainCookies.add(cookie);
-//        }
-//        Set<Cookie> cookieSet = new HashSet<>(domainCookies);
+        List<Cookie> domainCookies = new ArrayList<>();
+        for (Cookie cookie : cookies) {
+            if (cookie.getDomain().contains(domain)) domainCookies.add(cookie);
+        }
+        Set<Cookie> cookieSet = new HashSet<>(domainCookies);
         File file = new File(absolutePath);
         try (FileWriter fileWriter = new FileWriter(file)) {
             Gson gson = new Gson();
-            String cookieJson = gson.toJson(cookies);
+            String cookieJson = gson.toJson(cookieSet);
             fileWriter.write(cookieJson);
             fileWriter.flush();
         } catch (Exception e) {
