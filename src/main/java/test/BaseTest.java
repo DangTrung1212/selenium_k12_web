@@ -57,9 +57,9 @@ public class BaseTest {
             Calendar calendar = new GregorianCalendar();
             String fileName = String.format("%s-y%d-m%d-d%d__h%d-%d-%d-%d.png",
                     methodName,
-                    calendar.get(Calendar.YEAR),
                     calendar.get(Calendar.MONTH) + 1,
                     calendar.get(Calendar.DATE),
+                    calendar.get(Calendar.YEAR),
                     calendar.get(Calendar.HOUR_OF_DAY),
                     calendar.get(Calendar.MINUTE),
                     calendar.get(Calendar.SECOND),

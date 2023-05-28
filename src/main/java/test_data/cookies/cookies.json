@@ -1,7 +1,7 @@
 [
   {
     "name": "ASP.NET_SessionId",
-    "value": "rpowpmjuxe1unhqaev2vx5m5",
+    "value": "wtmgxx2ykbbc3zvgc5c0wjmp",
     "path": "/",
     "domain": "demowebshop.tricentis.com",
     "isSecure": false,
@@ -10,61 +10,37 @@
   },
   {
     "name": "__utmz",
-    "value": "78382081.1675344877.1.1.utmcsr\u003d(direct)|utmccn\u003d(direct)|utmcmd\u003d(none)",
+    "value": "78382081.1685282744.1.1.utmcsr\u003d(direct)|utmccn\u003d(direct)|utmcmd\u003d(none)",
     "path": "/",
     "domain": ".demowebshop.tricentis.com",
-    "expiry": "Aug 4, 2023 8:35:22 AM",
+    "expiry": "Nov 27, 2023 9:07:02 AM",
     "isSecure": false,
-    "isHttpOnly": false
+    "isHttpOnly": false,
+    "sameSite": "Lax"
   },
   {
     "name": "Nop.customer",
-    "value": "f9a0a510-53d4-436c-9b15-b16eece8afbb",
+    "value": "4422c161-fd05-411f-8204-031bb2ace8a4",
     "path": "/",
     "domain": "demowebshop.tricentis.com",
-    "expiry": "Feb 2, 2024 8:35:26 PM",
+    "expiry": "May 27, 2024 9:07:12 PM",
     "isSecure": false,
-    "isHttpOnly": true
-  },
-  {
-    "name": "__atuvs",
-    "value": "63dbbbecb3d70ce2002",
-    "path": "/",
-    "domain": "demowebshop.tricentis.com",
-    "expiry": "Feb 2, 2023 9:05:16 PM",
-    "isSecure": false,
-    "isHttpOnly": false
+    "isHttpOnly": true,
+    "sameSite": "Lax"
   },
   {
     "name": "__utmt",
     "value": "1",
     "path": "/",
     "domain": ".demowebshop.tricentis.com",
-    "expiry": "Feb 2, 2023 8:44:37 PM",
+    "expiry": "May 28, 2023 9:15:43 PM",
     "isSecure": false,
-    "isHttpOnly": false
-  },
-  {
-    "name": "NopCommerce.RecentlyViewedProducts",
-    "value": "RecentlyViewedProductIds\u003d72",
-    "path": "/",
-    "domain": "demowebshop.tricentis.com",
-    "expiry": "Feb 12, 2023 8:35:17 PM",
-    "isSecure": false,
-    "isHttpOnly": false
-  },
-  {
-    "name": "__atuvc",
-    "value": "3%7C5",
-    "path": "/",
-    "domain": "demowebshop.tricentis.com",
-    "expiry": "Mar 2, 2024 8:35:16 PM",
-    "isSecure": false,
-    "isHttpOnly": false
+    "isHttpOnly": false,
+    "sameSite": "Lax"
   },
   {
     "name": "ARRAffinitySameSite",
-    "value": "fc06465c332dbd696c292ada76ec7d7733108ecefdc4475406a3ff997944f96b",
+    "value": "c87cfca9533fb6ed9073f5953c272e806d3ffcecff688cd52364c911623ea2a0",
     "path": "/",
     "domain": ".demowebshop.tricentis.com",
     "isSecure": true,
@@ -73,12 +49,23 @@
   },
   {
     "name": "__utmb",
-    "value": "78382081.12.10.1675344877",
+    "value": "78382081.12.10.1685282744",
     "path": "/",
     "domain": ".demowebshop.tricentis.com",
-    "expiry": "Feb 2, 2023 9:05:22 PM",
+    "expiry": "May 28, 2023 9:37:02 PM",
     "isSecure": false,
-    "isHttpOnly": false
+    "isHttpOnly": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "NopCommerce.RecentlyViewedProducts",
+    "value": "RecentlyViewedProductIds\u003d72",
+    "path": "/",
+    "domain": "demowebshop.tricentis.com",
+    "expiry": "Jun 7, 2023 9:06:49 PM",
+    "isSecure": false,
+    "isHttpOnly": false,
+    "sameSite": "Lax"
   },
   {
     "name": "__utmc",
@@ -86,23 +73,26 @@
     "path": "/",
     "domain": ".demowebshop.tricentis.com",
     "isSecure": false,
-    "isHttpOnly": false
-  },
-  {
-    "name": "__utma",
-    "value": "78382081.1674967067.1675344877.1675344877.1675344877.1",
-    "path": "/",
-    "domain": ".demowebshop.tricentis.com",
-    "expiry": "Mar 8, 2024 8:35:22 PM",
-    "isSecure": false,
-    "isHttpOnly": false
+    "isHttpOnly": false,
+    "sameSite": "Lax"
   },
   {
     "name": "ARRAffinity",
-    "value": "fc06465c332dbd696c292ada76ec7d7733108ecefdc4475406a3ff997944f96b",
+    "value": "c87cfca9533fb6ed9073f5953c272e806d3ffcecff688cd52364c911623ea2a0",
     "path": "/",
     "domain": ".demowebshop.tricentis.com",
     "isSecure": true,
-    "isHttpOnly": true
+    "isHttpOnly": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__utma",
+    "value": "78382081.2139791104.1685282744.1685282744.1685282744.1",
+    "path": "/",
+    "domain": ".demowebshop.tricentis.com",
+    "expiry": "Jul 1, 2024 9:07:02 PM",
+    "isSecure": false,
+    "isHttpOnly": false,
+    "sameSite": "Lax"
   }
 ]
